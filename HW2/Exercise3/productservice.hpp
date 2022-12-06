@@ -112,7 +112,7 @@ vector<Bond> BondProductService::GetBonds(string& _ticker) {
 	vector<Bond> res;
 	for (auto& p : bondMap) {
 		if (p.second.GetTicker() == _ticker) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
@@ -123,7 +123,7 @@ vector<IRSwap> IRSwapProductService::GetSwaps(DayCountConvention _fixedLegDayCou
 	vector<IRSwap> res;
 	for (auto& p : swapMap) {
 		if (p.second.GetFixedLegDayCountConvention() == _fixedLegDayCountConvention) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
@@ -134,7 +134,7 @@ vector<IRSwap> IRSwapProductService::GetSwaps(PaymentFrequency _fixedLegPaymentF
 	vector<IRSwap> res;
 	for (auto& p : swapMap) {
 		if (p.second.GetFixedLegPaymentFrequency() == _fixedLegPaymentFrequency) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
@@ -145,7 +145,7 @@ vector<IRSwap> IRSwapProductService::GetSwaps(FloatingIndex _floatingIndex){
 	vector<IRSwap> res;
 	for (auto& p : swapMap) {
 		if (p.second.GetFloatingIndex() == _floatingIndex) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
@@ -156,7 +156,7 @@ vector<IRSwap> IRSwapProductService::GetSwapsGreaterThan(int _termYears) {
 	vector<IRSwap> res;
 	for (auto& p : swapMap) {
 		if (p.second.GetTermYears() > _termYears) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
@@ -167,7 +167,7 @@ vector<IRSwap> IRSwapProductService::GetSwapsLessThan(int _termYears) {
 	vector<IRSwap> res;
 	for (auto& p : swapMap) {
 		if (p.second.GetTermYears() < _termYears) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
@@ -178,7 +178,7 @@ vector<IRSwap> IRSwapProductService::GetSwaps(SwapType _swapType) {
 	vector<IRSwap> res;
 	for (auto& p : swapMap) {
 		if (p.second.GetSwapType() == _swapType) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
@@ -189,7 +189,7 @@ vector<IRSwap> IRSwapProductService::GetSwaps(SwapLegType _swapLegType) {
 	vector<IRSwap> res;
 	for (auto& p : swapMap) {
 		if (p.second.GetSwapLegType() == _swapLegType) {
-			res.emplace_back(p.second);
+			res.push_back(p.second);
 		}
 	}
 	return res;
